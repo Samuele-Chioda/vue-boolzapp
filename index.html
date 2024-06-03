@@ -51,9 +51,9 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" class="font-size" placeholder="Cerca chat o messaggi">
             </div>
-            <div class="d-flex m-1 column">
+            <div class="d-flex column">
                 <div v-for="(contact, index) in contacts" :key="index" class="contact d-flex m-1"
-                    @click="selectContact(index)">
+                    :class="{ 'selected-contact': currentContactIndex === index }" @click="selectContact(index)">
                     <div class="d-flex">
                         <img :src="contact.avatar" :alt="contact.name">
                         <p><span>{{ contact.name }}</span><br>Ultimo messaggio inviato</p>
@@ -78,14 +78,9 @@
                 </div>
             </div>
             <div class="message-zone">
-                <div class="slot-message sent">
-                    <p>Hai portato a spasso il cane?</p>
-                </div>
-                <div class="slot-message sent">
-                    <p>Hai portato a spasso il cane?</p>
-                </div>
-                <div class="slot-message ricevied">
-                    <p>Tutto fatto!</p>
+                <div v-for="message in selectedContact.messages" :key="message.date"
+                    :class="[message.status, 'slot-message']">
+                    <p>{{ message.message }}</p>
                 </div>
                 <div class="searchbar-bottom d-flex">
                     <input type="text" placeholder="Scrivi un messaggio">
