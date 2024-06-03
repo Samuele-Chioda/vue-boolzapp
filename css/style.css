@@ -17,7 +17,7 @@ body {
 
 p {
     font-size: .7rem;
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 i {
@@ -34,10 +34,11 @@ img {
 
 span {
     font-weight: bold;
-    font-size: 0.8rem;;
+    font-size: 0.8rem;
+    ;
 }
 
-.font-size{
+.font-size {
     font-size: 0.6rem;
 }
 
@@ -83,9 +84,9 @@ span {
 
 .message-zone {
     background-image: url('../img/mine.jpg');
-    background-size:auto;
+    background-size: auto;
     width: 100%;
-    height: calc(100% - 66px);
+    height: calc(100% - 49px);
     overflow: auto;
 }
 
@@ -101,23 +102,40 @@ span {
     border-bottom: 1px solid black;
 }
 
-.searchbar{
+.searchbar {
     width: 100%;
 }
 
-.slot-message{
-    border: 1px solid black;
+.message-zone {
+    display: flex;
+    flex-direction: column;
+}
+
+.slot-message {
     border-radius: 0.5rem;
     padding: 0.2rem;
     display: flex;
-    width: 40%;
-    margin: 1rem;
+    width: auto;
+    max-width: 60%;
+    height: auto;
+    flex-direction: column;
+    margin-top: .5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
-.inviato{
-    background-color:lightgreen;
+.inviato {
+    background-color: lightgreen;
+    align-self: flex-end;
+    text-align: right;
 }
 
-.ricevuto{
+.ricevuto {
     background-color: white;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.sofia {
+    border-right: 1px solid lightgray;
 }
