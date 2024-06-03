@@ -16,7 +16,7 @@ body {
 }
 
 p {
-    font-size: .7rem;
+    font-size: .5rem;
     margin-bottom: 0;
 }
 
@@ -51,7 +51,7 @@ span {
 }
 
 #app {
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
     position: absolute;
     top: 1rem;
@@ -114,7 +114,6 @@ span {
 
 .slot-message {
     border-radius: 0.5rem;
-    padding: 0.2rem;
     display: flex;
     min-width: 40%;
     max-width: 60%;
@@ -123,17 +122,18 @@ span {
     margin-top: .5rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    padding: .2rem;
 }
 
 .sent {
-    background-color: lightgreen;
+    background-color: #D5F9BA;
     align-self: flex-end;
     text-align: left;
 
 }
 
 .ricevied {
-    background-color: white;
+    background-color: #FFFFFF;
     align-self: flex-start;
     text-align: left;
 }
@@ -149,4 +149,14 @@ span {
     position: absolute;
     bottom: 0;
     font-size: .8rem;
+}
+
+.column {
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(100% - 170px);
+}
+
+.contact {
+    justify-content: space-between;
 }
