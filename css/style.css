@@ -173,6 +173,10 @@ input{
     padding:.5rem;
 }
 
+.contact:hover{
+    border: 1px solid lightgray;
+}
+
 .selected-contact {
     background-color: #EAEAEA;
 }

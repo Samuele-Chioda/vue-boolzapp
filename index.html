@@ -68,8 +68,8 @@
         <section class="right-sec">
             <div class="display-flex  border-bottom my-bg">
                 <div class="flex header-left">
-                    <img src="./img/avatar_1.jpg" alt="sofia">
-                    <p class="m-0"><span>Michele</span><br>Ultimo accesso oggi alle 12:00</p>
+                    <img :src="selectedContact.avatar" :alt="selectedContact.name">
+                    <p class="m-0"><span>{{ selectedContact.name }}</span><br>Ultimo accesso oggi alle 12:00</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
