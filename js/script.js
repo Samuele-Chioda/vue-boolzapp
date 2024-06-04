@@ -166,7 +166,8 @@ createApp({
                     ]
                 }
             ],
-            currentContactIndex: 0
+            currentContactIndex: 0,
+            newMessage:''
         }
     },
     computed: {
@@ -177,6 +178,23 @@ createApp({
     methods: {
         selectContact(index) {
             this.currentContactIndex = index;
+        },
+        sendMessage() {
+            if (this.newMessage.trim() !== '') {
+                this.contacts[this.currentContactIndex].messages.push({
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+                setTimeout(() => {
+                    this.contacts[this.currentContactIndex].messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
+            }
         }
     }
 }).mount('#app')

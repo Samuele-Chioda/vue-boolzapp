@@ -66,7 +66,7 @@
         </section>
 
         <section class="right-sec">
-            <div class="display-flex  border-bottom">
+            <div class="display-flex  border-bottom my-bg">
                 <div class="flex header-left">
                     <img src="./img/avatar_1.jpg" alt="sofia">
                     <p class="m-0"><span>Michele</span><br>Ultimo accesso oggi alle 12:00</p>
@@ -83,7 +83,7 @@
                     <p>{{ message.message }}</p>
                 </div>
                 <div class="searchbar-bottom d-flex">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input id="last-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
                 </div>
             </div>
         </section>

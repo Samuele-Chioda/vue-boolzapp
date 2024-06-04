@@ -23,6 +23,7 @@ p {
 i {
     color: grey;
     margin: .5rem;
+    font-size: .8rem;
 }
 
 img {
@@ -35,11 +36,14 @@ img {
 span {
     font-weight: bold;
     font-size: 0.8rem;
-    ;
+}
+
+input{
+    width: 80%;
 }
 
 #body {
-    background-color: #DBDBD3;
+    background-color: #d7dbd6;
 }
 
 #input {
@@ -57,6 +61,10 @@ span {
     display: flex;
 }
 
+.my-bg{
+    background-color: #eaeaea;
+}
+
 .font-size {
     font-size: 0.6rem;
 }
@@ -64,13 +72,13 @@ span {
 .left-sec {
     width: 30%;
     height: 100%;
-    background-color: #EAEAEA;
+    background-color: white;
 }
 
 .right-sec {
     width: 70%;
     height: 100%;
-    background-color: #EAEAEA;
+    background-color: white;
 }
 
 .display-flex {
@@ -86,7 +94,7 @@ span {
     background-image: url('../img/mine.jpg');
     background-size: auto;
     width: 100%;
-    height: calc(100% - 49px);
+    height: calc(100% - 40px);
     overflow: auto;
 }
 
@@ -129,7 +137,6 @@ span {
     background-color: #D5F9BA;
     align-self: flex-end;
     text-align: left;
-
 }
 
 .received {
@@ -140,29 +147,33 @@ span {
 
 .sofia {
     border-right: 1px solid lightgray;
+    background-color: #eaeaea;
 }
 
 .searchbar-bottom input {
     width: 100%;
     padding: 5px;
-    border: none;
+    border: 1px solid lightgray;
     position: absolute;
     bottom: 0;
     font-size: .6rem;
+    margin: 0 auto;
 }
+
 
 .column {
     flex-direction: column;
     overflow-y: auto;
-    height: calc(100% - 170px);
+    height: calc(100% - 130px);
     background-color: white;
 }
 
 .contact {
     justify-content: space-between;
+    padding:.5rem;
 }
 
 .selected-contact {
     background-color: #EAEAEA;
-    /* Colore di background per il contatto selezionato */
 }
+
