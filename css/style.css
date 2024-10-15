@@ -38,7 +38,7 @@ span {
     font-size: 0.8rem;
 }
 
-input{
+input {
     width: 80%;
 }
 
@@ -48,6 +48,10 @@ input{
 
 #input {
     width: 100%;
+}
+
+#last-input {
+    padding: 0.5rem;
 }
 
 #app {
@@ -61,7 +65,7 @@ input{
     display: flex;
 }
 
-.my-bg{
+.my-bg {
     background-color: #eaeaea;
 }
 
@@ -73,6 +77,8 @@ input{
     width: 30%;
     height: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-sec {
@@ -152,7 +158,7 @@ input{
 
 .searchbar-bottom input {
     width: 100%;
-    padding: 5px;
+    padding: .5px;
     border: 1px solid lightgray;
     position: absolute;
     bottom: 0;
@@ -160,20 +166,25 @@ input{
     margin: 0 auto;
 }
 
+.searchbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
 
 .column {
     flex-direction: column;
     overflow-y: auto;
-    height: calc(100% - 130px);
+    height: auto;
     background-color: white;
 }
 
 .contact {
     justify-content: space-between;
-    padding:.5rem;
+    padding: .5rem;
 }
 
-.contact:hover{
+.contact:hover {
     border: 1px solid lightgray;
 }
 
@@ -181,3 +192,10 @@ input{
     background-color: #EAEAEA;
 }
 
+.message-time {
+    font-size: 0.4rem;
+    color: grey;
+    text-align: right;
+    margin-top: 0.2rem;
+    display: block;
+}

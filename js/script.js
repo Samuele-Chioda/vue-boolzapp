@@ -1,4 +1,11 @@
-const { createApp } = Vue
+const { createApp } = Vue;
+
+function getRandomDate() {
+    const start = new Date(2020, 0, 1).getTime();
+    const end = new Date().getTime();
+    const randomTimestamp = Math.floor(Math.random() * (end - start) + start);
+    return dayjs(randomTimestamp).format('DD/MM/YYYY HH:mm:ss');
+}
 
 createApp({
     data() {
@@ -10,17 +17,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: getRandomDate(),
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: getRandomDate(),
                             message: 'Ricordati di stendere i panni',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: getRandomDate(),
                             message: 'Tutto fatto!',
                             status: 'received'
                         }
@@ -32,17 +39,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
+                            date: getRandomDate(),
                             message: 'Ciao come stai?',
                             status: 'sent'
                         },
                         {
-                            date: '20/03/2020 16:30:55',
+                            date: getRandomDate(),
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            date: getRandomDate(),
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
@@ -54,125 +61,224 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '28/03/2020 10:10:40',
+                            date: getRandomDate(),
                             message: 'La Marianna va in campagna',
                             status: 'received'
                         },
                         {
-                            date: '28/03/2020 10:20:10',
+                            date: getRandomDate(),
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent'
                         },
                         {
-                            date: '28/03/2020 16:15:22',
+                            date: getRandomDate(),
                             message: 'Ah scusa!',
                             status: 'received'
                         }
                     ],
                 },
                 {
-                    name: 'Alessandro B.',
+                    name: 'Giulia',
                     avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            date: getRandomDate(),
+                            message: 'Hey, ci sei per un caffè domani?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
+                            date: getRandomDate(),
+                            message: 'Certo, a che ora?',
                             status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Alle 15:00 va bene?',
+                            status: 'sent'
                         }
                     ],
                 },
                 {
-                    name: 'Alessandro L.',
+                    name: 'Luca',
                     avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ricordati di chiamare la nonna',
+                            date: getRandomDate(),
+                            message: 'Hai visto il nuovo film?',
+                            status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Non ancora, ne vale la pena?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Va bene, stasera la sento',
+                            date: getRandomDate(),
+                            message: 'Assolutamente sì, te lo consiglio!',
                             status: 'received'
                         }
                     ],
                 },
                 {
-                    name: 'Claudia',
+                    name: 'Elena',
                     avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
+                            date: getRandomDate(),
+                            message: 'Ci vediamo stasera?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
-                            status: 'sent'
-                        }
-                    ],
-                },
-                {
-                    name: 'Federico',
-                    avatar: './img/avatar_7.jpg',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                            date: getRandomDate(),
+                            message: 'Sì, ci sarò!',
                             status: 'received'
                         }
                     ],
                 },
                 {
-                    name: 'Davide',
-                    avatar: './img/avatar_8.jpg',
+                    name: 'Michele',
+                    avatar: './img/avatar_1.jpg',
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            date: getRandomDate(),
+                            message: 'Hai portato a spasso il cane?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
+                            date: getRandomDate(),
+                            message: 'Ricordati di stendere i panni',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Tutto fatto!',
                             status: 'received'
                         }
-                    ]
+                    ],
+                },
+                {
+                    name: 'Fabio',
+                    avatar: './img/avatar_2.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: getRandomDate(),
+                            message: 'Ciao come stai?',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Bene grazie! Stasera ci vediamo?',
+                            status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Samuele',
+                    avatar: './img/avatar_3.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: getRandomDate(),
+                            message: 'La Marianna va in campagna',
+                            status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Sicuro di non aver sbagliato chat?',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Ah scusa!',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    name: 'Giulia',
+                    avatar: './img/avatar_4.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: getRandomDate(),
+                            message: 'Hey, ci sei per un caffè domani?',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Certo, a che ora?',
+                            status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Alle 15:00 va bene?',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Luca',
+                    avatar: './img/avatar_5.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: getRandomDate(),
+                            message: 'Hai visto il nuovo film?',
+                            status: 'received'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Non ancora, ne vale la pena?',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Assolutamente sì, te lo consiglio!',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    name: 'Elena',
+                    avatar: './img/avatar_6.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: getRandomDate(),
+                            message: 'Ci vediamo stasera?',
+                            status: 'sent'
+                        },
+                        {
+                            date: getRandomDate(),
+                            message: 'Sì, ci sarò!',
+                            status: 'received'
+                        }
+                    ],
                 }
             ],
             currentContactIndex: 0,
-            newMessage:''
+            newMessage: '',
+            searchQuery: ''
         }
     },
     computed: {
         selectedContact() {
             return this.contacts[this.currentContactIndex];
+        },
+        filteredContacts() {
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
         }
     },
     methods: {
@@ -182,19 +288,19 @@ createApp({
         sendMessage() {
             if (this.newMessage.trim() !== '') {
                 this.contacts[this.currentContactIndex].messages.push({
-                    date: new Date().toLocaleString(),
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.newMessage,
                     status: 'sent'
                 });
                 this.newMessage = '';
                 setTimeout(() => {
                     this.contacts[this.currentContactIndex].messages.push({
-                        date: new Date().toLocaleString(),
-                        message: 'Ok',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        message: 'Ok, ho ricevuto il tuo messaggio!',
                         status: 'received'
                     });
                 }, 1000);
             }
         }
     }
-}).mount('#app')
+}).mount('#app');

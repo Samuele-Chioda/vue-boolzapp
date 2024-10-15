@@ -18,21 +18,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
         rel="stylesheet">
-    <title>vue-boolzapp</title>
+    <title>vue-Boolzapp</title>
 </head>
 
 <body id="body">
-    <header>
-    </header>
+    <header></header>
 
     <div id="app">
+        <!-- Sezione di sinistra con l'avatar di Sofia -->
         <section class="left-sec">
             <div class="display-flex border-bottom sofia">
                 <div class="flex header-left">
                     <img src="./img/avatar_io.jpg" alt="sofia">
-                    <p class="m-0"></p><span>Sofia</span><br></p>
+                    <p class="m-0"><span>Sofia</span><br></p>
                 </div>
                 <div>
                     <i class="fa-regular fa-circle"></i>
@@ -40,19 +40,16 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
-            <div class="new-message mb-2 flex p-2">
-                <i class="fa-solid fa-bell-slash"></i>
-                <div>
-                    <p class="m-0">Ricevi notifiche di nuovi messaggi.</p>
-                    <p class="mb-0"><a href="#">Attiva notifiche Desktop</a></p>
-                </div>
-            </div>
+
+            <!-- Barra di ricerca -->
             <div class="d-flex mb-2 searchbar">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" class="font-size" placeholder="Cerca chat o messaggi">
+                <input type="text" class="font-size" placeholder="Cerca contatto" v-model="searchQuery">
             </div>
+
+            <!-- Lista contatti filtrati -->
             <div class="d-flex column">
-                <div v-for="(contact, index) in contacts" :key="index" class="contact d-flex m-1"
+                <div v-for="(contact, index) in filteredContacts" :key="index" class="contact d-flex m-1"
                     :class="{ 'selected-contact': currentContactIndex === index }" @click="selectContact(index)">
                     <div class="d-flex">
                         <img :src="contact.avatar" :alt="contact.name">
@@ -65,8 +62,9 @@
             </div>
         </section>
 
+        <!-- Sezione di destra con i messaggi -->
         <section class="right-sec">
-            <div class="display-flex  border-bottom my-bg">
+            <div class="display-flex border-bottom my-bg">
                 <div class="flex header-left">
                     <img :src="selectedContact.avatar" :alt="selectedContact.name">
                     <p class="m-0"><span>{{ selectedContact.name }}</span><br>Ultimo accesso oggi alle 12:00</p>
@@ -77,18 +75,27 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
+
+            <!-- Messaggi -->
             <div class="message-zone">
                 <div v-for="message in selectedContact.messages" :key="message.date"
                     :class="[message.status, 'slot-message']">
                     <p>{{ message.message }}</p>
+                    <small class="message-time">{{ message.date }}</small> <!-- Aggiungi l'orario -->
                 </div>
+
+
+                <!-- Input per nuovo messaggio -->
                 <div class="searchbar-bottom d-flex">
-                    <input id="last-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
+                    <input id="last-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage"
+                        @keyup.enter="sendMessage">
                 </div>
             </div>
         </section>
     </div>
+
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs"></script>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
